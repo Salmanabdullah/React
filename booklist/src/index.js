@@ -19,7 +19,7 @@ const books = [
     author:'Frank Kane '
   },
   {
-    img:'https://images-na.ssl-images-amazon.com/images/I/510V86isnRL._SX404_BO1,204,203,200_.jpg',
+    img:'https://m.media-amazon.com/images/I/71pnMuhEBsL._AC_UY327_FMwebp_QL65_.jpg',
     title:'Hands-On Machine Learning with scikit-learn and Scientific Python Toolkits',
     author:'Tarek Amr '
   }
@@ -29,7 +29,6 @@ const Booklist = () => {
   return (
     <section>
       {books.map(item =>{
-        const {img,title,author} = item;
         return <Book item={item}/>
       })}
     </section> 
@@ -37,7 +36,6 @@ const Booklist = () => {
 }
 
 function Book(props){
-  console.log(props);
   const {img,title,author} = props.item;
   return (
     <article>
