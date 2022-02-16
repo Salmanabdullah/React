@@ -68,6 +68,7 @@ ReactDom.render(<Greeting/>, document.getElementById('root'));
 import React, { useState } from "react";
 
 const UseStateBasics = () => {
+	/*array destructure in useState method *it takes two arguments(value,function), convention is to name like this below*/
   const [text, setText] = useState("change the title");
   const changeTitle = () => {
     if (text === "change the title") {
