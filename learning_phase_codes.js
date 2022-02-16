@@ -64,4 +64,35 @@ const Heading = () => <h1>Hello world</h1>;
 const Person = () => <p>This is me</p>;
 ReactDom.render(<Greeting/>, document.getElementById('root'));
 
+//useState method
+import React, { useState } from "react";
+
+const UseStateBasics = () => {
+  const [text, setText] = useState("change the title");
+  const changeTitle = () => {
+    if (text === "change the title") {
+      setText("hello world");
+    } else {
+      setText("change the title");
+    }
+  };
+
+  return (
+    <React.Fragment>
+      <h2>{text}</h2>
+      <button type="button" className="btn" onClick={changeTitle}>
+        change title
+      </button>
+    </React.Fragment>
+  );
+};
+
+function App() {
+  return (
+    <div className="container">
+      <UseStateBasics />
+    </div>
+  );
+}
+
 
