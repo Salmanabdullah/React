@@ -64,6 +64,10 @@ const Heading = () => <h1>Hello world</h1>;
 const Person = () => <p>This is me</p>;
 ReactDom.render(<Greeting/>, document.getElementById('root'));
 
+/*Hooks must start with use
+	component name must be uppercase*
+	must be in the function / component body
+	cannot call conditonally*/
 //useState method
 import React, { useState } from "react";
 
@@ -97,3 +101,41 @@ function App() {
 }
 
 
+/**useState method on array
+"../" means to get access on one directory up
+onClick needs to have an arrow function otherwise it will invoke the functioin onload
+array destructure
+*/
+import React from "react";
+import { data } from "../../../data";
+
+const UseStateArray = () => {
+  const [people, setPeople] = React.useState(data);
+  const removeItem = (id) => {
+    let newPeople = people.filter((person) => person.id !== id);
+    setPeople(newPeople);
+  };
+  return (
+    <>
+      {people.map((person) => {
+        const { id, name } = person;
+        return (
+          <div key={id} className="item">
+            <h4>{name}</h4>
+            <button onClick={() => removeItem(id)}>remove</button>
+          </div>
+        );
+      })}
+      <button className="btn" onClick={() => setPeople([])}>
+        clear items
+      </button>
+    </>
+  );
+};
+function App() {
+  return (
+    <div className="container">
+      <UseStateArray />
+    </div>
+  );
+}
