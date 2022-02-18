@@ -139,3 +139,40 @@ function App() {
     </div>
   );
 }
+
+/*by default useEffect runs after every re-render
+a second argument can pass which indicates from where to initiate*/
+import React, { useState, useEffect } from "react";
+
+const UseEffectCleanup = () => {
+  const [size, setSize] = useState(window.innerWidth);
+
+  const checkSize =()=>{
+    setSize(window.innerWidth)
+  }
+/*every time user resize the window useEffect renders 
+*useEfferct can also return something. here we are returning a remove event listener to
+*delete rendered data before re-rendering
+*useEffect cleanup is very important when we want to display something and remove if needeed
+*/
+useEffect(()=>{
+  window.addEventListener('resize',checkSize);
+  return ()=> {
+    window.removeEventListener('resize',checkSize)
+  }
+})
+
+  return (
+    <>
+      <h1>window</h1>
+      <h2>{size}</h2>
+    </>
+  );
+};
+function App() {
+  return (
+    <div>
+      <UseEffectCleanup />
+    </div>
+  );
+}
