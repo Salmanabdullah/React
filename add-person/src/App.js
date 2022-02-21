@@ -6,14 +6,15 @@ function App() {
   const [people, setPeople] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
+    //generating unique id. person is a object
     const person = { id: new Date().getTime().toString(), userName, email };
     if (userName && email) {
       setPeople((people) => {
+//previous value of people and then add person to that array
         return [...people, person];
       });
       setUserName("");
       setEmail("");
-      console.log("sdklfjsdkf");
     } else {
       alert("Please provide necessary informations");
     }
@@ -29,6 +30,7 @@ function App() {
               id="userName"
               name="userName"
               value={userName}
+              //any change to the input area
               onChange={(e) => setUserName(e.target.value)}
             />
           </div>
@@ -44,6 +46,7 @@ function App() {
           </div>
           <button type="submit">add person</button>
         </form>
+        {/* mapping through the people array and display item on the window */}
         {people.map((item) => {
           const { id, userName, email } = item;
           return (
