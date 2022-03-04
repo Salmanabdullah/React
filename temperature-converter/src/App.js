@@ -41,7 +41,7 @@ class TemperatureInput extends React.Component {
   }
 }
 
-//to calculate 
+//to calculate
 class Calucator extends React.Component {
   constructor(props) {
     super(props);
