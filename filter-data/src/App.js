@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { data } from "./products";
 
 class Container extends React.Component {
   render() {
@@ -9,38 +11,70 @@ class Container extends React.Component {
     );
   }
 }
-class Container extends React.Component {
+class SearchBox extends React.Component {
   render() {
     return (
       <>
-        <SearchBox />
+        <div className="border border-2 border-primary p-3">
+          <div>
+            <input type="text" placeholder="Search" />
+          </div>
+          <div>
+            <input type="checkbox" id="filter" name="filter" />
+            <label htmlFor="filter">Only show products in stock</label>
+          </div>
+        </div>
       </>
     );
   }
 }
-class Container extends React.Component {
+
+class DisplayProducts extends React.Component {
   render() {
+    const rows=[];
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    );
+  }
+}
+
+class ProductCatagoryRow extends React.Component {
+  render() {
+    const catagory = this.props.catagory;
     return (
       <>
-        <SearchBox />
+        <tr>
+          <th>{catagory}</th>
+        </tr>
       </>
     );
   }
 }
-class Container extends React.Component {
+
+class ProductRow extends React.Component {
   render() {
-    return (
-      <>
-        <SearchBox />
-      </>
+    const product = this.props.product;
+    const name = product.stocked ? (
+      product.name
+    ) : (
+      <span className="text-danger">{product.name}</span>
     );
-  }
-}
-class Container extends React.Component {
-  render() {
     return (
       <>
-        <SearchBox />
+        <tr>
+          <td>{name}</td>
+          <td>{product.price}</td>
+        </tr>
       </>
     );
   }
@@ -48,7 +82,7 @@ class Container extends React.Component {
 
 function App() {
   return (
-    <div>
+    <div className="box">
       <Container />
     </div>
   );
