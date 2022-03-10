@@ -1,9 +1,17 @@
 import React from 'react';
-import './App.css';
+import Review from './review';
+import './index.css';
 
 function App() {
   return (
     <>
+    <section>
+      <div>
+        <h2>Our Reviews</h2>
+        <div className='underline'></div>
+      </div>
+      <Review/>
+    </section>
     </>
   );
 }
