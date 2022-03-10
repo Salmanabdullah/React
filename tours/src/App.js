@@ -8,14 +8,14 @@ function App() {
   return (
     <article>
       <h1>our tours</h1>
-      <div className='underline'></div>
+      <div className="underline"></div>
       <div>
-        {tours.map(tour=>{
-          return < DisplayTours key={tour.id} {...tour} />
+        {tours.map((tour) => {
+          return <DisplayTours key={tour.id} {...tour} />;
         })}
       </div>
     </article>
-  )
+  );
 }
 
 export default App;

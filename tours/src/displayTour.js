@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import tours from "./tours";
 
 const DisplayTours = ({ id, title, image, price, text }) => {
   const [readMore, setReadMore] = useState(false);
-  const [tour, setTour] = useState([]);
+  const [tour, setTour] = useState(tours);
   const removeTour = (id) => {
     const newTour = tours.filter((item) => item.id !== id);
     setTour(newTour);
+    console.log(newTour);
   };
   return (
     <article className="my-4 box">
