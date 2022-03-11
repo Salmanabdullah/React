@@ -1,7 +1,7 @@
-import React from 'react';
-import DisplayTours from './displayTour';
-import tours from './tours';
-import './index.css';
+import React from "react";
+import DisplayTours from "./displayTour";
+import tours from "./tours";
+import "./index.css";
 
 //use map function to map all the objects using Displaytours component
 function App() {
