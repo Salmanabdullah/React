@@ -7,9 +7,9 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 const SingleQuestion = ({ title, info }) => {
   const [showInfo, setShowInfo] = useState(false);
   return (
-    <article className="my-4">
+    <article>
       <div className=" d-flex justify-content-between mx-4" >
-        <h4 className="fw-bold">{title} </h4>
+        <h4>{title} </h4>
         <button
           onClick={() => setShowInfo(!showInfo)}
           className="rounded-circle pb-1 text-danger"
@@ -17,7 +17,7 @@ const SingleQuestion = ({ title, info }) => {
           {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
       </div>
-      {showInfo && <p className="mx-4">{info}</p>}
+      {showInfo && <p className="mx-4 fs-5">{info}</p>}
     </article>
   );
 };
