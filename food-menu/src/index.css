@@ -1,5 +1,6 @@
-.underline{
+.underline {
   height: 5px;
   width: 100px;
+  border-radius: 5px;
   background-color: rgb(89, 128, 89);
 }
